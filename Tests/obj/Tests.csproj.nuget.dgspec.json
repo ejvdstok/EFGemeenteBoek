@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\EFGemeenteBoek\\Tests\\Tests.csproj": {}
+    "E:\\EF\\EFGemeenteBoek\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "E:\\EFGemeenteBoek\\Tests\\Tests.csproj": {
+    "E:\\EF\\EFGemeenteBoek\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\EFGemeenteBoek\\Tests\\Tests.csproj",
+        "projectUniqueName": "E:\\EF\\EFGemeenteBoek\\Tests\\Tests.csproj",
         "projectName": "Tests",
-        "projectPath": "E:\\EFGemeenteBoek\\Tests\\Tests.csproj",
+        "projectPath": "E:\\EF\\EFGemeenteBoek\\Tests\\Tests.csproj",
         "packagesPath": "C:\\Users\\deboc\\.nuget\\packages\\",
-        "outputPath": "E:\\EFGemeenteBoek\\Tests\\obj\\",
+        "outputPath": "E:\\EF\\EFGemeenteBoek\\Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\deboc\\AppData\\Roaming\\NuGet\\NuGet.Config",

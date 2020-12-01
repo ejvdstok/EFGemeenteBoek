@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\EFGemeenteBoek\\Model\\Model.csproj": {}
+    "E:\\EF\\EFGemeenteBoek\\Model\\Model.csproj": {}
   },
   "projects": {
-    "E:\\EFGemeenteBoek\\Model\\Model.csproj": {
+    "E:\\EF\\EFGemeenteBoek\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\EFGemeenteBoek\\Model\\Model.csproj",
+        "projectUniqueName": "E:\\EF\\EFGemeenteBoek\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "E:\\EFGemeenteBoek\\Model\\Model.csproj",
+        "projectPath": "E:\\EF\\EFGemeenteBoek\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\deboc\\.nuget\\packages\\",
-        "outputPath": "E:\\EFGemeenteBoek\\Model\\obj\\",
+        "outputPath": "E:\\EF\\EFGemeenteBoek\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\deboc\\AppData\\Roaming\\NuGet\\NuGet.Config",

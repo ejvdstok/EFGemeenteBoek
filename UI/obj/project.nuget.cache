@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cm26S2Du8tRzMNLzjOIxFCerbtJmZ+VzoqUxMV161381gSP1l66AubL1YqxTAYp3zejNl3dAZXBTqTnZqeUz2Q==",
+  "dgSpecHash": "5+Qbp7igCB+RxggIpGjwWj8x/C3+C8I6yS0vbDUDjyLGwOMVGi1HKh131C2hIbionVmYl8abYX88HU5Jv6/3qg==",
   "success": true,
-  "projectFilePath": "E:\\EFGemeenteBoek\\UI\\UI.csproj",
+  "projectFilePath": "E:\\EF\\EFGemeenteBoek\\UI\\UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deboc\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\deboc\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -13,7 +13,7 @@ namespace Model.Entities
         // ---------------------
         // Navigation Properties
         // ---------------------
-        
+       
         public virtual ICollection<Bericht>Berichten{ get; set; }
     }
 }

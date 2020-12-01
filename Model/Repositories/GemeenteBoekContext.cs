@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 namespace Model.Repositories
 {
-    public class EFCultuurhuisContext : DbContext
+    public class GemeenteBoekContext : DbContext
     {
         public static IConfigurationRoot configuration;
         private bool testMode = false;
@@ -31,8 +31,8 @@ namespace Model.Repositories
         // ------------
         // Constructors
         // ------------
-        public EFCultuurhuisContext() { }
-        public EFCultuurhuisContext(DbContextOptions<EFCultuurhuisContext> options) : base(options) { }
+        public GemeenteBoekContext() { }
+        public GemeenteBoekContext(DbContextOptions<GemeenteBoekContext> options) : base(options) { }
         // -------
         // Logging
         // -------
@@ -76,6 +76,15 @@ namespace Model.Repositories
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // --------
+            // Personen + Medewerkers + Profiel
+            // --------
+
+            modelBuilder.Entity<Persoon>()
+                    .ToTable("Personen")
+                    .HasDiscriminator<string>("PersoonType")
+                    .HasValue<Medewerker>("M")
+                    .HasValue<Profiel>("P");
 
             // -----
             // Provincie
@@ -160,7 +169,6 @@ namespace Model.Repositories
             .IsRequired()
             .HasMaxLength(5);
             modelBuilder.Entity<Adres>().Property(b => b.BusNr)
-            .IsRequired()
             .HasMaxLength(5);
             modelBuilder.Entity<Adres>().Property(b => b.StraatId)
            .IsRequired();
@@ -220,7 +228,7 @@ namespace Model.Repositories
             modelBuilder.Entity<Persoon>().Property(b => b.PersoonId)
             .IsRequired()
             .HasMaxLength(2);
-            //FK adres Id
+       
             modelBuilder.Entity<Persoon>().Property(b => b.FamilieNaam)
             .IsRequired()
             .HasMaxLength(30);
@@ -282,7 +290,7 @@ namespace Model.Repositories
             // -----
             // Medewerker
             // -----
-            modelBuilder.Entity<Medewerker>().ToTable("Medewerkers");
+            modelBuilder.Entity<Medewerker>().ToTable("Personen");
             modelBuilder.Entity<Medewerker>().Property(b => b.AfdelingId)
             .IsRequired();
 
@@ -295,8 +303,8 @@ namespace Model.Repositories
             // -----
             // Profiel
             // -----
-            modelBuilder.Entity<Profiel>().ToTable("Profielen");
-            modelBuilder.Entity<Profiel>().Property(b => b.KennismakingsTekst)
+            modelBuilder.Entity<Profiel>().ToTable("Personen");
+            modelBuilder.Entity<Profiel>().Property(b => b.KennismakingTekst)
             .IsRequired()
             .HasMaxLength(225);
             modelBuilder.Entity<Profiel>().Property(b => b.WoontHierSindsDatum);
@@ -403,8 +411,6 @@ namespace Model.Repositories
             modelBuilder.Entity<Bericht>().Property(b => b.BerichtId)
             .IsRequired();
             modelBuilder.Entity<Bericht>().Property(b => b.HoofdBerichtId);
-            modelBuilder.Entity<Bericht>().Property(b => b.GemeenteId)
-            .IsRequired();
             modelBuilder.Entity<Bericht>().Property(b => b.PersoonId)
             .IsRequired();
             modelBuilder.Entity<Bericht>().Property(b => b.BerichtTypeId)
@@ -421,20 +427,22 @@ namespace Model.Repositories
             modelBuilder.Entity<Bericht>()
                 .HasOne(x => x.HoofdBericht)
                 .WithMany(y => y.Berichten)
-                .OnDelete(DeleteBehavior.NoAction)
-                .HasForeignKey(x => x.HoofdBerichtId);
+                .HasForeignKey(x => x.HoofdBerichtId)
+                .OnDelete(DeleteBehavior.ClientNoAction);
       
 
             modelBuilder.Entity<Bericht>()
                 .HasOne(x => x.BerichtType)
                 .WithMany(y => y.Berichten)
-                .HasForeignKey(x => x.BerichtTypeId);
+                .HasForeignKey(x => x.BerichtTypeId)
+                .OnDelete(DeleteBehavior.ClientNoAction);
 
             modelBuilder.Entity<Bericht>()
                 .HasOne(x => x.Profiel)
                 .WithMany(y => y.Berichten)
                 .HasForeignKey(x => x.PersoonId)
-                .HasForeignKey(x => x.GemeenteId);
+                .OnDelete(DeleteBehavior.ClientNoAction);
+
 
             // -----
             // BerichtType
@@ -545,6 +553,87 @@ namespace Model.Repositories
                 new Afdeling { AfdelingId = 2, AfdelingCode = "BOEK", AfdelingNaam = "Boekhouding" },
                 new Afdeling { AfdelingId = 3, AfdelingCode = "AANK", AfdelingNaam = "Aankoop" }
                 );
+
+                // ----------------------
+                // Seeding Persoon(medewerkers)
+                // ----------------------
+                modelBuilder.Entity<Medewerker>().HasData
+                (
+                new Medewerker
+                {
+                    PersoonId = 1,
+                    VoorNaam = "Jan",
+                    FamilieNaam = "Janssens",
+                    Geslacht = Geslacht.M,
+                    GeboorteDatum = new DateTime(1980, 1, 1),
+                    TelefoonNr = "02/2222222222",
+                    LoginNaam = "Jan",
+                    LoginPaswoord = "Baarden",
+                    VerkeerdeLoginsAantal = 0,
+                    LoginAantal = 0,
+                    Geblokkeerd = false,
+                    AfdelingId = 1,
+                    AdresId = 1,
+                    GeboorteplaatsId = 1730,
+                    TaalId = 1,
+
+                },
+                new Medewerker
+                {
+                    PersoonId = 2,
+                    VoorNaam = "Piet",
+                    FamilieNaam = "Pieters",
+                    Geslacht = Geslacht.M,
+                    GeboorteDatum = new DateTime(1980, 1, 1),
+                    TelefoonNr = "02/2222222222",
+                    LoginNaam = "Piet",
+                    LoginPaswoord = "Baarden",
+                    VerkeerdeLoginsAantal = 0,
+                    LoginAantal = 0,
+                    Geblokkeerd = false,
+                    AfdelingId = 1,
+                    AdresId = 1,
+                    GeboorteplaatsId = 1731,
+                    TaalId = 1,
+                },
+                new Medewerker
+                {
+                    PersoonId = 3,
+                    VoorNaam = "Joris",
+                    FamilieNaam = "Jorissens",
+                    Geslacht = Geslacht.M,
+                    GeboorteDatum = new DateTime(1980, 1, 1),
+                    TelefoonNr = "01/11111111",
+                    LoginNaam = "Joris",
+                    LoginPaswoord = "Baarden",
+                    VerkeerdeLoginsAantal = 0,
+                    LoginAantal = 0,
+                    Geblokkeerd = false,
+                    AfdelingId = 1,
+                    AdresId = 1,
+                    GeboorteplaatsId = 1731,
+                    TaalId = 1,
+                },
+                new Medewerker
+                {
+                    PersoonId = 4,
+                    VoorNaam = "Korneel",
+                    FamilieNaam = "Cornelis",
+                    Geslacht = Geslacht.M,
+                    GeboorteDatum = new DateTime(1980, 1, 1),
+                    TelefoonNr = "02/2222222222",
+                    LoginNaam = "Korneel",
+                    LoginPaswoord = "Baarden",
+                    VerkeerdeLoginsAantal = 0,
+                    LoginAantal = 0,
+                    Geblokkeerd = false,
+                    AfdelingId = 1,
+                    AdresId = 1,
+                    GeboorteplaatsId = 1792,
+                    TaalId = 1,
+                }
+
+                ) ;
 
                 // ----------------------
                 // Seeding InteresseSoort

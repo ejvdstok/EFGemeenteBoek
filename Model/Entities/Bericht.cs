@@ -15,6 +15,10 @@ namespace Model.Entities
         public string BerichtTitel { get; set; }
         public string BerichtTekst { get; set; }
 
+        public int Level { get; set; }
+
+        public byte[] Aangepast { get; set; }
+
         // ---------------------
         // Navigation Properties
         // ---------------------
@@ -23,8 +27,8 @@ namespace Model.Entities
 
         public virtual Bericht HoofdBericht { get; set; }
 
+        public virtual Gemeente Gemeente { get; set; }
+
         public virtual ICollection<Bericht> Berichten { get; set; }
-
-
     }
 }

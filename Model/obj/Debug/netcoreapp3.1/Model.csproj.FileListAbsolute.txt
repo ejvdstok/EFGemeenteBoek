@@ -19,3 +19,16 @@ E:\EFGemeenteBoek\Model\obj\Debug\netcoreapp3.1\Model.dll
 E:\EFGemeenteBoek\Model\obj\Debug\netcoreapp3.1\Model.pdb
 E:\EFGemeenteBoek\Model\obj\Debug\netcoreapp3.1\Model.genruntimeconfig.cache
 E:\EFGemeenteBoek\Model\bin\Debug\netcoreapp3.1\AppSettings.json
+E:\EF\EFGemeenteBoek\Model\bin\Debug\netcoreapp3.1\AppSettings.json
+E:\EF\EFGemeenteBoek\Model\bin\Debug\netcoreapp3.1\Model.deps.json
+E:\EF\EFGemeenteBoek\Model\bin\Debug\netcoreapp3.1\Model.runtimeconfig.json
+E:\EF\EFGemeenteBoek\Model\bin\Debug\netcoreapp3.1\Model.runtimeconfig.dev.json
+E:\EF\EFGemeenteBoek\Model\bin\Debug\netcoreapp3.1\Model.dll
+E:\EF\EFGemeenteBoek\Model\bin\Debug\netcoreapp3.1\Model.pdb
+E:\EF\EFGemeenteBoek\Model\obj\Debug\netcoreapp3.1\Model.csprojAssemblyReference.cache
+E:\EF\EFGemeenteBoek\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfoInputs.cache
+E:\EF\EFGemeenteBoek\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfo.cs
+E:\EF\EFGemeenteBoek\Model\obj\Debug\netcoreapp3.1\Model.csproj.CoreCompileInputs.cache
+E:\EF\EFGemeenteBoek\Model\obj\Debug\netcoreapp3.1\Model.dll
+E:\EF\EFGemeenteBoek\Model\obj\Debug\netcoreapp3.1\Model.pdb
+E:\EF\EFGemeenteBoek\Model\obj\Debug\netcoreapp3.1\Model.genruntimeconfig.cache

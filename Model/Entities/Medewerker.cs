@@ -6,6 +6,8 @@ namespace Model.Entities
 {
     public class Medewerker : Persoon
     {
+        private string Gegevens => $"{PersoonId} - {AfdelingId} - {TelefoonNr}";
+
         public int AfdelingId { get; set; }
 
         // ---------------------
@@ -14,5 +16,13 @@ namespace Model.Entities
 
         public virtual Persoon Persoon { get; set; }
         public virtual Afdeling Afdeling { get; set; }
+
+        // -------
+        // Methods
+        // -------
+        public override string ToString()
+        {
+            return Gegevens;
+        }
     }
 }

@@ -8187,11 +8187,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\EFGemeenteBoek\\UI\\UI.csproj",
+      "projectUniqueName": "E:\\EF\\EFGemeenteBoek\\UI\\UI.csproj",
       "projectName": "UI",
-      "projectPath": "E:\\EFGemeenteBoek\\UI\\UI.csproj",
+      "projectPath": "E:\\EF\\EFGemeenteBoek\\UI\\UI.csproj",
       "packagesPath": "C:\\Users\\deboc\\.nuget\\packages\\",
-      "outputPath": "E:\\EFGemeenteBoek\\UI\\obj\\",
+      "outputPath": "E:\\EF\\EFGemeenteBoek\\UI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\deboc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8208,8 +8208,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\EFGemeenteBoek\\Model\\Model.csproj": {
-              "projectPath": "E:\\EFGemeenteBoek\\Model\\Model.csproj"
+            "E:\\EF\\EFGemeenteBoek\\Model\\Model.csproj": {
+              "projectPath": "E:\\EF\\EFGemeenteBoek\\Model\\Model.csproj"
             }
           }
         }
